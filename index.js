@@ -43,7 +43,7 @@ fetch("https://www.mmtcpamp.com/shop/gold/lotus-gold-bar-24k-1gm")
         console.log("mrpAmount", product.mrpAmount);
         console.log("preTaxAmount", product.preTaxAmount);
         console.log("taxAmount", product.taxAmount);
-        console.log("preTaxAmount", product.preTaxAmount);
+        console.log("postTaxAmount", product.postTaxAmount);
       } catch (error) {
         console.error("Error parsing JSON:", error);
       }
