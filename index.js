@@ -1,6 +1,5 @@
 const fs = require("fs");
 
-// fetch("https://www.ajio.com/mmtc-pamp-1-gm-24-kt-999-9--lotus-yellow-gold-bar/p/6005363110_multi")
 fetch("https://www.ajio.com/search/?text=mmtc%20pamp%201gm")
   .then((response) => response.text())
   .then((text) => {
@@ -55,3 +54,28 @@ fetch("https://www.mmtcpamp.com/shop/gold/lotus-gold-bar-24k-1gm")
   .then(() => {
     console.log("=====================================");
   });
+
+fetch("https://www.amazon.in/MMTC-PAMP-Lotus-24k-999-9-Gold/dp/B08KSPYJX2/", {
+  headers: {
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+    Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-IN,en;q=0.9",
+  },
+})
+  .then((response) => response.text())
+  .then((text) => {
+    console.log("---Amazon---");
+    // fs.writeFileSync("data.html", text);
+
+    const re = /<div[^>]*class="[^"]*twister-plus-buying-options-price-data[^"]*"[^>]*>\s*([\s\S]*?)\s*<\/div>/i;
+    const match = text.match(re);
+    if (match && match[1]) {
+      const parsedData = JSON.parse(match[1]);
+      const product = parsedData.desktop_buybox_group_1[0];
+      // fs.writeFileSync("data.json", JSON.stringify(product));
+      console.log("priceAmount:", product.priceAmount);
+    } else {
+      console.log("Could not find price data");
+    }
+  })
+  .catch(console.error);
