@@ -94,6 +94,12 @@ mynta();
 // ==========================
 // conbzaar is giving cloudflare protection, can't scrape the data
 // ==========================
+setTimeout(() => {
+  console.log(`
+CoinBazaar is usually the cheapest:
+https://www.coinbazaar.in/1-gram-gold-coins-price-1gm-gold-bar-todays-rate-/3107-mmtc-pamp-gold-lotus-bar-of-1-grams-24-karat-in-9999-purity-fineness-in-certi-card.html
+`);
+}, 3000);
 // fetch("https://www.coinbazaar.in/1-gram-gold-coins-price-1gm-gold-bar-todays-rate-/3107-mmtc-pamp-gold-lotus-bar-of-1-grams-24-karat-in-9999-purity-fineness-in-certi-card.html", {
 //   headers: {
 //     "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
