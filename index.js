@@ -96,7 +96,7 @@ mynta();
 // ==========================
 setTimeout(() => {
   console.log(`
-CoinBazaar is usually the cheapest:
+CoinBazaar also offer good deal:
 https://www.coinbazaar.in/1-gram-gold-coins-price-1gm-gold-bar-todays-rate-/3107-mmtc-pamp-gold-lotus-bar-of-1-grams-24-karat-in-9999-purity-fineness-in-certi-card.html
 `);
 }, 3000);
